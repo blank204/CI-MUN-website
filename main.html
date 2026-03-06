@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CIMUN — Model United Nations</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --maroon:#5a0a0a;
+    --deep-maroon:#3d0606;
+    --gold:#c9a84c;
+    --light-gold:#e8d5a0;
+    --cream:#faf6ee;
+    --off-white:#f5f0e5;
+    --text-dark:#2a1a1a;
+    --text-light:#faf6ee;
+  }
+  html{scroll-behavior:smooth;font-size:16px}
+  body{
+    font-family:'Josefin Sans',sans-serif;
+    background:var(--cream);
+    color:var(--text-dark);
+    overflow-x:hidden;
+  }
+
+  /* ── HERO ── */
+  .hero{
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:linear-gradient(175deg,var(--deep-maroon) 0%,var(--maroon) 40%,#7a1a1a 100%);
+    position:relative;
+    text-align:center;
+    padding:3rem 1.5rem;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.12) 0%,transparent 60%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:'';position:absolute;bottom:0;left:0;right:0;height:120px;
+    background:linear-gradient(to top,var(--cream),transparent);
+    pointer-events:none;
+  }
+
+  .hero-logo{
+    width:200px;height:200px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid var(--gold);
+    box-shadow:0 0 60px rgba(201,168,76,.25);
+    animation:fadeUp .8s ease-out both;
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:300;font-size:clamp(2.8rem,6vw,5rem);
+    color:var(--text-light);
+    letter-spacing:.35em;
+    text-transform:uppercase;
+    margin-top:1.8rem;
+    animation:fadeUp 1s ease-out .2s both;
+  }
+  .hero-tagline{
+    font-family:'Libre Baskerville',serif;
+    font-style:italic;font-weight:400;
+    font-size:clamp(1rem,2vw,1.3rem);
+    color:var(--light-gold);
+    margin-top:1rem;
+    letter-spacing:.12em;
+    animation:fadeUp 1s ease-out .4s both;
+  }
+  .hero-divider{
+    width:80px;height:1px;
+    background:var(--gold);
+    margin:2rem auto 0;
+    animation:fadeUp 1s ease-out .6s both;
+  }
+  .hero-scroll{
+    position:absolute;bottom:140px;
+    display:flex;flex-direction:column;align-items:center;gap:.5rem;
+    color:var(--light-gold);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+    animation:fadeUp 1s ease-out .8s both;
+    cursor:pointer;text-decoration:none;
+  }
+  .hero-scroll span{animation:bounce 2s infinite}
+  @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+
+  /* ── SECTIONS ── */
+  section{padding:5rem 1.5rem}
+  .section-title{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:400;font-size:clamp(2rem,4vw,3rem);
+    text-align:center;
+    color:var(--maroon);
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin-bottom:.6rem;
+  }
+  .section-line{
+    width:60px;height:2px;
+    background:var(--gold);
+    margin:0 auto 3rem;
+  }
+
+  /* ── ABOUT ── */
+  .about{max-width:800px;margin:0 auto;text-align:center}
+  .about p{
+    font-family:'Libre Baskerville',serif;
+    font-size:1.05rem;line-height:1.9;
+    color:#4a3030;
+  }
+
+  /* ── TEAM ── */
+  .team-section{
+    background:linear-gradient(175deg,var(--deep-maroon),var(--maroon) 60%,#7a1a1a);
+    padding:5rem 1.5rem 6rem;
+  }
+  .team-section .section-title{color:var(--text-light)}
+
+  /* ── PHOTO FRAMES ── */
+  .photo-frame{
+    width:110px;height:110px;
+    border-radius:50%;
+    border:2px solid rgba(201,168,76,.35);
+    background:rgba(255,255,255,.06);
+    display:flex;align-items:center;justify-content:center;
+    margin:0 auto 1rem;
+    overflow:hidden;
+    position:relative;
+    transition:border-color .3s;
+  }
+  .photo-frame:hover{border-color:var(--gold)}
+  .photo-frame img{
+    width:100%;height:100%;object-fit:cover;
+    border-radius:50%;
+  }
+  .photo-frame .initials{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.6rem;font-weight:600;
+    color:rgba(201,168,76,.4);
+    letter-spacing:.05em;
+    user-select:none;
+  }
+  .photo-frame-sm{
+    width:72px;height:72px;
+    border-radius:50%;
+    border:1.5px solid rgba(201,168,76,.25);
+    background:rgba(255,255,255,.05);
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+    flex-shrink:0;
+    transition:border-color .3s;
+  }
+  .photo-frame-sm:hover{border-color:var(--gold)}
+  .photo-frame-sm img{
+    width:100%;height:100%;object-fit:cover;
+    border-radius:50%;
+  }
+  .photo-frame-sm .initials{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1rem;font-weight:600;
+    color:rgba(201,168,76,.35);
+    letter-spacing:.05em;
+    user-select:none;
+  }
+
+  /* Director */
+  .director-card{
+    max-width:500px;margin:0 auto 3.5rem;
+    text-align:center;
+    padding:2.5rem 2rem;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(201,168,76,.2);
+    border-radius:4px;
+  }
+  .director-card .photo-frame{
+    width:130px;height:130px;
+  }
+  .director-card .photo-frame .initials{font-size:2rem}
+  .director-card .role{
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.7rem;letter-spacing:.35em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:.6rem;
+  }
+  .director-card .name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.8rem;font-weight:500;
+    color:var(--text-light);
+    letter-spacing:.08em;
+  }
+
+  /* Executive row */
+  .exec-grid{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;
+    max-width:1000px;margin:0 auto 3.5rem;
+  }
+  .exec-card{
+    flex:1 1 180px;max-width:220px;
+    text-align:center;
+    padding:2rem 1.2rem 1.8rem;
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(201,168,76,.15);
+    border-radius:4px;
+    transition:border-color .3s,background .3s;
+  }
+  .exec-card:hover{
+    border-color:rgba(201,168,76,.3);
+    background:rgba(255,255,255,.05);
+  }
+  .exec-card .photo-frame{
+    width:100px;height:100px;
+  }
+  .exec-card .role{
+    font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:.4rem;
+  }
+  .exec-card .name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.25rem;font-weight:500;
+    color:var(--text-light);
+    letter-spacing:.05em;
+  }
+
+  /* Department grid */
+  .dept-label{
+    text-align:center;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;
+    color:var(--light-gold);
+    margin-bottom:2rem;
+    opacity:.7;
+  }
+  .dept-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:1.5rem;
+    max-width:1100px;margin:0 auto;
+  }
+  .dept-card{
+    background:rgba(255,255,255,.03);
+    border:1px solid rgba(201,168,76,.12);
+    border-radius:4px;
+    padding:2rem 1.5rem;
+    transition:border-color .3s,background .3s;
+  }
+  .dept-card:hover{
+    border-color:rgba(201,168,76,.35);
+    background:rgba(255,255,255,.06);
+  }
+  .dept-card .dept-name{
+    font-family:'Cormorant Garamond',serif;
+    font-size:1.15rem;font-weight:600;
+    color:var(--gold);
+    letter-spacing:.15em;
+    text-transform:uppercase;
+    margin-bottom:1.2rem;
+    padding-bottom:.7rem;
+    border-bottom:1px solid rgba(201,168,76,.15);
+    text-align:center;
+  }
+  .dept-card .member{
+    display:flex;align-items:center;
+    gap:1rem;
+    margin-bottom:.8rem;
+  }
+  .dept-card .member-info{
+    display:flex;flex-direction:column;
+  }
+  .dept-card .member .m-role{
+    font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;
+    color:var(--light-gold);opacity:.65;
+    margin-bottom:.15rem;
+  }
+  .dept-card .member .m-name{
+    font-family:'Libre Baskerville',serif;
+    font-size:.95rem;
+    color:var(--text-light);
+  }
+
+  /* ── FOOTER ── */
+  footer{
+    text-align:center;
+    padding:2.5rem 1.5rem;
+    background:var(--deep-maroon);
+    color:rgba(250,246,238,.4);
+    font-size:.75rem;letter-spacing:.15em;
+  }
+  footer span{color:var(--gold)}
+
+  /* ── RESPONSIVE ── */
+  @media(max-width:600px){
+    .hero-logo{width:140px;height:140px}
+    .dept-grid{grid-template-columns:1fr}
+    .exec-card{flex:1 1 140px;max-width:160px;padding:1.5rem 1rem}
+    .exec-card .photo-frame{width:80px;height:80px}
+    .exec-card .name{font-size:1.05rem}
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <img class="hero-logo" src="cimun-logo.png" alt="CIMUN Logo">
+  <h1>CIMUN</h1>
+  <p class="hero-tagline">Diplomacy &middot; Dialogue &middot; Discovery</p>
+  <div class="hero-divider"></div>
+  <a href="#about" class="hero-scroll">
+    Explore
+    <span>&#8595;</span>
+  </a>
+</section>
+
+<!-- ═══ ABOUT ═══ -->
+<section id="about">
+  <h2 class="section-title">About CIMUN</h2>
+  <div class="section-line"></div>
+  <div class="about">
+    <p>CIMUN is a distinguished Model United Nations conference dedicated to fostering diplomatic discourse, critical thinking, and global awareness among young leaders. Through rigorous committee simulations and spirited debate, delegates explore the complexities of international relations and emerge with a deeper understanding of the world's most pressing challenges.</p>
+  </div>
+</section>
+
+<!-- ═══ TEAM ═══ -->
+<section class="team-section" id="team">
+  <h2 class="section-title">The Secretariat</h2>
+  <div class="section-line" style="background:var(--gold)"></div>
+
+  <!-- Director -->
+  <div class="director-card">
+    <div class="photo-frame">
+      <!-- Replace with: <img src="photos/saara.jpg" alt="Saara Bhardwaj"> -->
+      <span class="initials">SB</span>
+    </div>
+    <div class="role">Organiser &amp; Director</div>
+    <div class="name">Saara Bhardwaj</div>
+  </div>
+
+  <!-- Executive Board -->
+  <div class="exec-grid">
+    <div class="exec-card">
+      <div class="photo-frame">
+        <!-- <img src="photos/ayesha.jpg" alt="Ayesha"> -->
+        <span class="initials">A</span>
+      </div>
+      <div class="role">Secretary General</div>
+      <div class="name">Ayesha</div>
+    </div>
+    <div class="exec-card">
+      <div class="photo-frame">
+        <!-- <img src="photos/hirannya.jpg" alt="Hirannya"> -->
+        <span class="initials">H</span>
+      </div>
+      <div class="role">Secretary General</div>
+      <div class="name">Hirannya</div>
+    </div>
+    <div class="exec-card">
+      <div class="photo-frame">
+        <!-- <img src="photos/raiyyan.jpg" alt="Raiyyan"> -->
+        <span class="initials">R</span>
+      </div>
+      <div class="role">Deputy Secretary General</div>
+      <div class="name">Raiyyan</div>
+    </div>
+    <div class="exec-card">
+      <div class="photo-frame">
+        <!-- <img src="photos/rushda.jpg" alt="Rushda"> -->
+        <span class="initials">R</span>
+      </div>
+      <div class="role">Deputy Secretary General</div>
+      <div class="name">Rushda</div>
+    </div>
+    <div class="exec-card">
+      <div class="photo-frame">
+        <!-- <img src="photos/abyan.jpg" alt="Abyan Ali"> -->
+        <span class="initials">AA</span>
+      </div>
+      <div class="role">President of the General Assembly</div>
+      <div class="name">Abyan Ali</div>
+    </div>
+    <div class="exec-card">
+      <div class="photo-frame">
+        <!-- <img src="photos/arishta.jpg" alt="Arishta Singh"> -->
+        <span class="initials">AS</span>
+      </div>
+      <div class="role">Deputy PGA</div>
+      <div class="name">Arishta Singh</div>
+    </div>
+  </div>
+
+  <!-- Departments -->
+  <div class="dept-label">Departments</div>
+  <div class="dept-grid">
+
+    <!-- Operations -->
+    <div class="dept-card">
+      <div class="dept-name">Operations</div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/kreisha.jpg" alt="Kreisha"> -->
+          <span class="initials">K</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Head</span>
+          <span class="m-name">Kreisha</span>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/aalia.jpg" alt="Aalia"> -->
+          <span class="initials">A</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Deputy</span>
+          <span class="m-name">Aalia</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Design / Marketing -->
+    <div class="dept-card">
+      <div class="dept-name">Design / Marketing</div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/pranavi.jpg" alt="Pranavi"> -->
+          <span class="initials">P</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Head</span>
+          <span class="m-name">Pranavi</span>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/anshika.jpg" alt="Anshika"> -->
+          <span class="initials">A</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Deputy</span>
+          <span class="m-name">Anshika</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Training -->
+    <div class="dept-card">
+      <div class="dept-name">Training</div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/mokshita.jpg" alt="Mokshita"> -->
+          <span class="initials">M</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Head</span>
+          <span class="m-name">Mokshita</span>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <span class="initials">&mdash;</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Deputy</span>
+          <span class="m-name">&mdash;</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Press -->
+    <div class="dept-card">
+      <div class="dept-name">Press</div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/rinish.jpg" alt="Rinish"> -->
+          <span class="initials">R</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Head</span>
+          <span class="m-name">Rinish</span>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/shakti.jpg" alt="Shakti"> -->
+          <span class="initials">S</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Deputy</span>
+          <span class="m-name">Shakti</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- IT -->
+    <div class="dept-card">
+      <div class="dept-name">IT</div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/pranav.jpg" alt="Pranav"> -->
+          <span class="initials">P</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Head</span>
+          <span class="m-name">Pranav</span>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/shri.jpg" alt="Shri Adhithya"> -->
+          <span class="initials">SA</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Deputy</span>
+          <span class="m-name">Shri Adhithya</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Outreach -->
+    <div class="dept-card">
+      <div class="dept-name">Outreach</div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/lucia.jpg" alt="Lucia"> -->
+          <span class="initials">L</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Head</span>
+          <span class="m-name">Lucia</span>
+        </div>
+      </div>
+      <div class="member">
+        <div class="photo-frame-sm">
+          <!-- <img src="photos/dania.jpg" alt="Dania"> -->
+          <span class="initials">D</span>
+        </div>
+        <div class="member-info">
+          <span class="m-role">Deputy</span>
+          <span class="m-name">Dania</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer>
+  &copy; 2026 <span>CIMUN</span> &mdash; All Rights Reserved
+</footer>
+
+</body>
+</html>
