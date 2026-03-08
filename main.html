@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CIMUN — Model United Nations</title>
+<title>CIMUN | Model United Nations</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -32,7 +32,7 @@
     background:linear-gradient(175deg,var(--deep-maroon) 0%,var(--maroon) 40%,#7a1a1a 100%);
     position:relative;
     text-align:center;
-    padding:3rem 1.5rem;
+    padding:3rem 1.5rem
   }
   .hero::before{
     content:'';position:absolute;inset:0;
@@ -50,17 +50,18 @@
     border-radius:50%;
     object-fit:cover;
     border:3px solid var(--gold);
-    box-shadow:0 0 60px rgba(201,168,76,.25);
+    box-shadow:0 0 60px 15px rgba(201,168,76,.25);
     animation:fadeUp .8s ease-out both;
   }
   .hero h1{
     font-family:'Cormorant Garamond',serif;
-    font-weight:300;font-size:clamp(2.8rem,6vw,5rem);
+    font-weight:300;
+    font-size:clamp(2.8rem,6vw,5rem);
     color:var(--text-light);
-    letter-spacing:.35em;
     text-transform:uppercase;
     margin-top:1.8rem;
     animation:fadeUp 1s ease-out .2s both;
+    text-align: center;
   }
   .hero-tagline{
     font-family:'Libre Baskerville',serif;
@@ -68,6 +69,7 @@
     font-size:clamp(1rem,2vw,1.3rem);
     color:var(--light-gold);
     margin-top:1rem;
+    margin-bottom: -0.6vh;
     letter-spacing:.12em;
     animation:fadeUp 1s ease-out .4s both;
   }
@@ -78,11 +80,12 @@
     animation:fadeUp 1s ease-out .6s both;
   }
   .hero-scroll{
-    position:absolute;bottom:140px;
+    position:absolute;bottom: 0.5px;
     display:flex;flex-direction:column;align-items:center;gap:.5rem;
-    color:var(--light-gold);font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--gold);font-size:.75rem;text-transform:uppercase;
     animation:fadeUp 1s ease-out .8s both;
     cursor:pointer;text-decoration:none;
+    padding-bottom: 6vh;
   }
   .hero-scroll span{animation:bounce 2s infinite}
   @keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
@@ -304,14 +307,14 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <img class="hero-logo" src="cimun-logo.png" alt="CIMUN Logo">
-  <h1>CIMUN</h1>
-  <p class="hero-tagline">Diplomacy &middot; Dialogue &middot; Discovery</p>
-  <div class="hero-divider"></div>
+  <img class="hero-logo" src="images/logo.jpg" alt="CIMUN Logo">
+  <h1>C I M U N</h1>
   <a href="#about" class="hero-scroll">
     Explore
     <span>&#8595;</span>
   </a>
+  <p class="hero-tagline">Diplomacy &middot; Dialogue &middot; Discovery</p>
+  <div class="hero-divider"></div>
 </section>
 
 <!-- ═══ ABOUT ═══ -->
@@ -331,8 +334,7 @@
   <!-- Director -->
   <div class="director-card">
     <div class="photo-frame">
-      <!-- Replace with: <img src="photos/saara.jpg" alt="Saara Bhardwaj"> -->
-      <span class="initials">SB</span>
+      <img src="images/ocmem/saara.jpg" alt="Saara Bhardwaj">
     </div>
     <div class="role">Organiser &amp; Director</div>
     <div class="name">Saara Bhardwaj</div>
@@ -350,16 +352,14 @@
     </div>
     <div class="exec-card">
       <div class="photo-frame">
-        <!-- <img src="photos/hirannya.jpg" alt="Hirannya"> -->
-        <span class="initials">H</span>
+        <img src="images/ocmem/Hiranya.jpg" alt="Hirannya">
       </div>
       <div class="role">Secretary General</div>
       <div class="name">Hirannya</div>
     </div>
     <div class="exec-card">
       <div class="photo-frame">
-        <!-- <img src="photos/raiyyan.jpg" alt="Raiyyan"> -->
-        <span class="initials">R</span>
+        <img src="photos/raiyyan.jpg" alt="Raiyyan">
       </div>
       <div class="role">Deputy Secretary General</div>
       <div class="name">Raiyyan</div>
@@ -382,8 +382,7 @@
     </div>
     <div class="exec-card">
       <div class="photo-frame">
-        <!-- <img src="photos/arishta.jpg" alt="Arishta Singh"> -->
-        <span class="initials">AS</span>
+        <img src="images/ocmem/Arishta.jpg" alt="Arishta Singh">
       </div>
       <div class="role">Deputy PGA</div>
       <div class="name">Arishta Singh</div>
@@ -409,8 +408,7 @@
       </div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/aalia.jpg" alt="Aalia"> -->
-          <span class="initials">A</span>
+          <img src="images/ocmem/Aalia.jpg" alt="Aalia">
         </div>
         <div class="member-info">
           <span class="m-role">Deputy</span>
@@ -424,8 +422,7 @@
       <div class="dept-name">Design / Marketing</div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/pranavi.jpg" alt="Pranavi"> -->
-          <span class="initials">P</span>
+          <img src="images/ocmem/Pranavi.jpg" alt="Pranavi">
         </div>
         <div class="member-info">
           <span class="m-role">Head</span>
@@ -449,8 +446,7 @@
       <div class="dept-name">Training</div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/mokshita.jpg" alt="Mokshita"> -->
-          <span class="initials">M</span>
+          <img src="images/ocmem/Mokshita.jpg" alt="Mokshita">
         </div>
         <div class="member-info">
           <span class="m-role">Head</span>
@@ -463,7 +459,7 @@
         </div>
         <div class="member-info">
           <span class="m-role">Deputy</span>
-          <span class="m-name">&mdash;</span>
+          <span class="m-name">Akhilesh</span>
         </div>
       </div>
     </div>
@@ -473,8 +469,7 @@
       <div class="dept-name">Press</div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/rinish.jpg" alt="Rinish"> -->
-          <span class="initials">R</span>
+          <img src="images/ocmem/Rinish.JPG" alt="Rinish">
         </div>
         <div class="member-info">
           <span class="m-role">Head</span>
@@ -483,8 +478,7 @@
       </div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/shakti.jpg" alt="Shakti"> -->
-          <span class="initials">S</span>
+          <img src="images/ocmem/shakti.jpg" alt="Shakti">
         </div>
         <div class="member-info">
           <span class="m-role">Deputy</span>
@@ -498,8 +492,7 @@
       <div class="dept-name">IT</div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/pranav.jpg" alt="Pranav"> -->
-          <span class="initials">P</span>
+          <img src="images/ocmem/pranav.jpg" alt="Pranav">
         </div>
         <div class="member-info">
           <span class="m-role">Head</span>
@@ -508,8 +501,7 @@
       </div>
       <div class="member">
         <div class="photo-frame-sm">
-          <!-- <img src="photos/shri.jpg" alt="Shri Adhithya"> -->
-          <span class="initials">SA</span>
+          <img src="images/ocmem/shri.jpeg" alt="Shri Adhithya">
         </div>
         <div class="member-info">
           <span class="m-role">Deputy</span>
