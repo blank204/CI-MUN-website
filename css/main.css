@@ -1,0 +1,417 @@
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+--maroon:#5a0a0a;
+--deep-maroon:#3d0606;
+--gold:#c9a84c;
+--light-gold:#e8d5a0;
+--cream:#faf6ee;
+--off-white:#f5f0e5;
+--text-dark:#2a1a1a;
+--text-light:#faf6ee;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+font-family:'Josefin Sans',sans-serif;
+background:var(--cream);
+color:var(--text-dark);
+overflow-x:hidden;
+}
+
+/* ── NAVBAR ── */
+.navbar {
+position: relative;
+top: 0;
+left: 0;
+padding-bottom: 3rem;
+background: transparent;
+z-index: 1000;
+align-content: right;
+}
+.navbar ul {
+display: flex;
+list-style: none;
+gap: 5rem;
+align-items: center;
+}
+.navbar a {
+color: var(--gold);
+text-decoration: none;
+font-weight: 500;
+text-transform: uppercase;
+font-size: 0.9rem;
+}
+
+.navbar a:hover {
+color: var(--light-gold);
+
+}
+
+/* ── HERO ── */
+.hero{
+min-height:100vh;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 2px), linear-gradient(175deg,var(--deep-maroon) 0%,var(--maroon) 40%,#7a1a1a 100%);
+background-size: 20px 20px, auto;
+position:relative;
+text-align:center;
+padding-top: 2rem;
+padding-bottom: 6rem;
+}
+.hero::before{
+content:'';position:absolute;inset:0;
+background:radial-gradient(ellipse at 50% 30%,rgba(201,168,76,.12) 0%,transparent 60%);
+pointer-events:none;
+}
+.hero::after{
+content:'';
+position:absolute;
+bottom:0;
+left:0;
+right:0;
+height:70px;
+background:linear-gradient(to top,var(--cream),transparent);
+pointer-events:none;
+}
+
+.hero-logo{
+width:250px;height:250px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid var(--gold);
+box-shadow:0 0 60px 15px rgba(201,168,76,.25);
+animation:fadeUp .8s ease-out both;
+}
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-weight:300;
+font-size:clamp(2.8rem,6vw,5rem);
+color:var(--text-light);
+text-transform:uppercase;
+margin-top:1.8rem;
+animation:fadeUp 1s ease-out .2s both;
+text-align: center;
+}
+.hero-tagline{
+font-family:'Libre Baskerville',serif;
+font-style:italic;font-weight:400;
+font-size:clamp(1rem,2vw,1.3rem);
+color:var(--light-gold);
+margin-top:1rem;
+margin-bottom: -0.6vh;
+letter-spacing:.12em;
+animation:fadeUp 1s ease-out .4s both;
+}
+.hero-divider{
+width:120px;height:2px;
+background:var(--gold);
+margin:1.5rem auto 0;
+animation:fadeUp 1s ease-out .6s both;
+}
+
+/* ── SECTIONS ── */
+section{padding:5rem 1.5rem}
+.section-title{
+font-family:'Cormorant Garamond',serif;
+font-weight:400;font-size:clamp(2rem,4vw,3rem);
+text-align:center;
+color:var(--maroon);
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:.6rem;
+}
+.section-line{
+width:60px;height:2px;
+background:var(--gold);
+margin:0 auto 3rem;
+}
+
+/* ── ABOUT ── */
+.about{max-width:800px;margin:0 auto;text-align:center}
+.about p{
+font-family:'Libre Baskerville',serif;
+font-size:1.05rem;line-height:1.9;
+color:#4a3030;
+}
+
+/* ── TEAM ── */
+.team-section{
+background: radial-gradient(circle, rgba(255,253,208,0.2) 1px, transparent 2px), linear-gradient(175deg,var(--deep-maroon),var(--maroon) 60%,#7a1a1a);
+background-size: 40px 40px, auto;
+padding:5rem 1.5rem 6rem;
+}
+.team-section .section-title{color:var(--text-light)}
+
+/* ── PHOTO FRAMES ── */
+.photo-frame{
+width:110px;height:110px;
+border-radius:50%;
+border:2px solid rgba(201,168,76,.35);
+background:rgba(255,255,255,.06);
+display:flex;align-items:center;justify-content:center;
+margin:0 auto 1rem;
+overflow:hidden;
+position:relative;
+transition:border-color .3s;
+}
+.photo-frame:hover{border-color:var(--gold)}
+.photo-frame img{
+width:100%;height:100%;object-fit:cover;
+border-radius:50%;
+}
+.photo-frame .initials{
+font-family:'Cormorant Garamond',serif;
+font-size:1.6rem;font-weight:600;
+color:rgba(201,168,76,.4);
+letter-spacing:.05em;
+user-select:none;
+}
+.photo-frame-sm{
+width:72px;height:72px;
+border-radius:50%;
+border:1.5px solid rgba(201,168,76,.25);
+background:rgba(255,255,255,.05);
+display:flex;align-items:center;justify-content:center;
+overflow:hidden;
+flex-shrink:0;
+transition:border-color .3s;
+}
+.photo-frame-sm:hover{border-color:var(--gold)}
+.photo-frame-sm img{
+width:100%;height:100%;object-fit:cover;
+border-radius:50%;
+}
+.photo-frame-sm .initials{
+font-family:'Cormorant Garamond',serif;
+font-size:1rem;font-weight:600;
+color:rgba(201,168,76,.35);
+letter-spacing:.05em;
+user-select:none;
+}
+
+/* Director */
+.director-card{
+max-width:500px;margin:0 auto 3.5rem;
+text-align:center;
+padding:2.5rem 2rem;
+background:rgba(255,255,255,.04);
+border:1px solid rgba(201,168,76,.2);
+border-radius:4px;
+}
+.director-card .photo-frame{
+width:130px;height:130px;
+}
+.director-card .photo-frame .initials{font-size:2rem}
+.director-card .role{
+font-family:'Josefin Sans',sans-serif;
+font-size:1rem;letter-spacing:.35em;text-transform:uppercase;
+color:var(--gold);margin-bottom:.6rem;
+}
+.director-card .name{
+font-family:'Cormorant Garamond',serif;
+font-size:1.8rem;font-weight:500;
+color:var(--text-light);
+letter-spacing:.08em;
+}
+
+/* Executive row */
+.exec-grid{
+display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;
+max-width:1000px;margin:0 auto 3.5rem;
+}
+.exec-card{
+flex:1 1 180px;max-width:220px;
+text-align:center;
+padding:2rem 1.2rem 1.8rem;
+background:rgba(255,255,255,.03);
+border:1px solid rgba(201,168,76,.15);
+border-radius:4px;
+transition:border-color .3s,background .3s;
+}
+.exec-card:hover{
+border-color:rgba(201,168,76,.3);
+background:rgba(255,255,255,.05);
+}
+.exec-card .photo-frame{
+width:100px;height:100px;
+}
+.exec-card .role{
+font-size:.6rem;letter-spacing:.3em;text-transform:uppercase;
+color:var(--gold);margin-bottom:.4rem;
+}
+.exec-card .name{
+font-family:'Cormorant Garamond',serif;
+font-size:1.25rem;font-weight:500;
+color:var(--text-light);
+letter-spacing:.05em;
+}
+
+/* Department grid */
+.dept-label{
+text-align:center;
+font-family:'Josefin Sans',sans-serif;
+font-size:.7rem;letter-spacing:.4em;text-transform:uppercase;
+color:var(--light-gold);
+margin-bottom:2rem;
+opacity:.7;
+}
+.dept-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:1.5rem;
+max-width:1100px;margin:0 auto;
+}
+.dept-card{
+background:rgba(255,255,255,.03);
+border:1px solid rgba(201,168,76,.12);
+border-radius:4px;
+padding:2rem 1.5rem;
+}
+/* .dept-card:hover{
+border-color:rgba(201,168,76,.35);
+background:rgba(255,255,255,.06);
+} */
+.dept-card .dept-name{
+font-family:'Cormorant Garamond',serif;
+font-size:1.15rem;font-weight:600;
+color:var(--gold);
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:1.2rem;
+padding-bottom:.7rem;
+border-bottom:1px solid rgba(201,168,76,.15);
+text-align:center;
+}
+.dept-card .member{
+display:flex;align-items:center;
+gap:1rem;
+margin-bottom:.8rem;
+border: 1px solid rgba(201,168,76,.1);
+padding: .5rem;
+border-radius: 10px;
+transition:border-color .3s,background .3s;
+}
+.dept-card .member:hover{
+border-color:rgba(201,168,76,.25);
+background:rgba(255,255,255,.05);
+}
+
+.dept-card .member-info{
+display:flex;flex-direction:column;
+}
+.dept-card .member .m-role{
+font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;
+color:var(--light-gold);opacity:.65;
+margin-bottom:.15rem;
+}
+.dept-card .member .m-name{
+font-family:'Libre Baskerville',serif;
+font-size:.95rem;
+color:var(--text-light);
+}
+
+/* ── FOOTER ── */
+footer{
+text-align:center;
+padding:2.5rem 1.5rem;
+background:var(--deep-maroon);
+color:rgba(250,246,238,.4);
+font-size:.75rem;letter-spacing:.15em;
+}
+footer span{color:var(--gold)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:600px){
+.hero-logo{width:140px;height:140px}
+.dept-grid{grid-template-columns:1fr}
+.exec-card{flex:1 1 140px;max-width:160px;padding:1.5rem 1rem}
+.exec-card .photo-frame{width:80px;height:80px}
+.exec-card .name{font-size:1.05rem}
+}
+
+/* infocard */
+
+.overlay {
+/* Layout remains the same */
+display: flex; 
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.7);
+justify-content: center;
+align-items: center;
+z-index: 1000;
+
+/* Animation properties */
+opacity: 0;
+visibility: hidden;
+transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+/* This class will be added via JavaScript */
+.overlay.show {
+opacity: 1;
+visibility: visible;
+}
+
+/* Optional: Make the card "pop" up slightly as it fades in */
+.popup-card {
+width: 30rem;
+background: var(--maroon);
+color: var(--cream);
+margin: auto;
+padding: 30px;
+border-radius: 15px;
+border: 2px solid var(--gold);
+transform: scale(0.8); /* Start slightly smaller */
+transition: transform 0.4s ease;
+}
+
+.popup-card .header {
+display: flex; flex-direction: row;
+}
+
+.popup-card .header .img {
+height: 100px; width: 100px; border-radius: 20%; object-fit: cover; margin-bottom: 1rem;
+}
+
+.popup-card .header .titles {
+margin-left: 1.5rem; display: flex; flex-direction: column; justify-content: center;
+}
+
+.popup-card .header .name {
+color: var(--gold); text-transform: uppercase;font-family:'Josefin Sans',sans-serif;;letter-spacing:.05em
+}
+
+.popup-card .header .role {
+color: var(--light-gold); text-transform: uppercase;font-size:.7rem
+}
+
+.popup-card .desc {
+padding-top: 10px; font-weight: 2px
+
+}
+
+.overlay.show .popup-card {
+transform: scale(1); /* Grow to normal size */
+}
+
+.close-btn {
+position: absolute;
+top: 10px;
+right: 20px;
+font-size: 25px;
+cursor: pointer;
+}
+
+.link {
+color: var(--cream);
+}
+
+.link:hover {
+color: var(--light-gold);
+}
