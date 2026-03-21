@@ -312,6 +312,66 @@ font-size:.95rem;
 color:var(--text-light);
 }
 
+.outreach {
+background:rgba(255,255,255,.03);
+border:1px solid rgba(201,168,76,.12);
+border-radius:4px;
+padding:2rem 1.5rem;
+width: 100%;
+display: flex; flex-direction: column;
+grid-row: 3;
+grid-column: 1 / -1;
+}
+.outreach .dept-name{
+align-self: top;
+font-family:'Cormorant Garamond',serif;
+font-size:1.15rem;font-weight:600;
+color:var(--gold);
+letter-spacing:.15em;
+text-transform:uppercase;
+margin-bottom:1.2rem;
+padding-bottom:.7rem;
+border-bottom:1px solid rgba(201,168,76,.15);
+text-align:center;
+}
+
+.outreach .managers {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+}
+.outreach .member{
+display:flex;align-items:center;
+flex-direction: column;
+gap:1rem;
+margin-bottom:.8rem;
+border: 1px solid rgba(201,168,76,.1);
+padding: 1rem 2rem;
+border-radius: 10px;
+transition:border-color .3s,background .3s;
+}
+.outreach .member:hover{
+border-color:rgba(201,168,76,.25);
+background:rgba(255,255,255,.05);
+}
+
+.outreach .member-info{
+display:flex;flex-direction:column;
+}
+.outreach .member .m-role{
+font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;
+color:var(--light-gold);opacity:.65;
+margin-bottom:.15rem;
+}
+.outreach .member .m-name{
+font-family:'Libre Baskerville',serif;
+font-size:.95rem;
+color:var(--text-light);
+}
+
+
+
 /* ── FOOTER ── */
 footer{
 text-align:center;
