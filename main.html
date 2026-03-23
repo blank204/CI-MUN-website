@@ -6,6 +6,7 @@
 <title>CIMUN | Home</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Josefin+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -29,7 +30,6 @@ function closePopup(id) {
       <li><a href="#about">About</a></li>
       <li><a href="/agendas.html">Agendas</a></li>
       <li><a href="#team">Team</a></li>
-      <li><a href="#testimonies">Testimonies</a></li>
       <li><a href="#contact">Contact Us</a></li>
     </ul>
   </nav>
@@ -246,7 +246,7 @@ function closePopup(id) {
             <p class="role">Deputy PGA</p>
           </div>
         </div>
-        <p class="desc">i like mun</p>
+        <p class="desc">I’m a simple and focused person who values family, consistency, and personal growth. I like maintaining a balance between responsibilities and things I enjoy.</p>
       </div>
     </div>
   </div>
@@ -355,7 +355,7 @@ function closePopup(id) {
               <p class="role">Deputy of Design &amp; Marketing</p>
             </div>
           </div>
-          <p class="desc">Hey! I'm Pranavi, I'm someone who enjoys being creative and trying new things. I like spending time reading, sketching and working on fun projects. I also love photography, especially wildlife photography :) I love taking part in events, and I constantly look for opportunities to grow and challenge myself! All my photos are at <a class="link" href="https://www.instagram.com/polaroids.prnviii" target="_blank">@polaroids.prnviii</a></p>
+          <p class="desc">Hello there! I’m Anshika I enjoy exploring creativity through design, social media, and different creative projects. I’m always interested in experimenting with new ideas, especially when it comes to visual content and digital platforms. I like being involved in events and initiatives where I’m looking for opportunities to grow, take on challenges, and bring fresh ideas to the table!</p>
         </div>
       </div>
     </div>
@@ -382,7 +382,7 @@ function closePopup(id) {
               <p class="role">Head of Training</p>
             </div>
           </div>
-          <p class="desc">Hey! I'm Pranavi, I'm someone who enjoys being creative and trying new things. I like spending time reading, sketching and working on fun projects. I also love photography, especially wildlife photography :) I love taking part in events, and I constantly look for opportunities to grow and challenge myself! All my photos are at <a class="link" href="https://www.instagram.com/polaroids.prnviii" target="_blank">@polaroids.prnviii</a></p>
+          <p class="desc">Hello! I’m Mokshita, Head of Training. I’m passionate about shaping confident, capable delegates and turning potential into performance. From breaking down complex topics to building strong public speaking and debate skills, I focus on making training both impactful and engaging. I enjoy pushing boundaries, introducing fresh ideas, and creating an environment where everyone is challenged to grow and stand out. Always aiming higher for myself and my team.<p>
         </div>
       </div>
     </div>
@@ -408,7 +408,7 @@ function closePopup(id) {
               <p class="role">Head of Press</p>
             </div>
           </div>
-          <p class="desc">Hey! I'm Pranavi, I'm someone who enjoys being creative and trying new things. I like spending time reading, sketching and working on fun projects. I also love photography, especially wildlife photography :) I love taking part in events, and I constantly look for opportunities to grow and challenge myself! All my photos are at <a class="link" href="https://www.instagram.com/polaroids.prnviii" target="_blank">@polaroids.prnviii</a></p>
+          <p class="desc">Rinish Kumaar leads the Press team at CIMUN 2026 with a strong vision for visual storytelling. With experience in photography and editing, he transforms events into compelling narratives. Instagram: @shotsbyrinish</a></p>
         </div>
       </div>
       <div class="member" onclick="openPopup('shakti')">
@@ -430,7 +430,7 @@ function closePopup(id) {
               <p class="role">Deputy Head of Press</p>
             </div>
           </div>
-          <p class="desc">Hey! I'm Pranavi, I'm someone who enjoys being creative and trying new things. I like spending time reading, sketching and working on fun projects. I also love photography, especially wildlife photography :) I love taking part in events, and I constantly look for opportunities to grow and challenge myself! All my photos are at <a class="link" href="https://www.instagram.com/polaroids.prnviii" target="_blank">@polaroids.prnviii</a></p>
+          <p class="desc">Shakthi serves as the Deputy Head of Press, bringing a creative and refined visual style. His passion for photography drives him to create impactful and engaging visuals and plays a key role in shaping the overall media presence of CIMUN. Instagram: @shakthivisuals</p>
         </div>
       </div>
     </div>
@@ -438,7 +438,7 @@ function closePopup(id) {
     <!-- IT -->
     <div class="dept-card">
       <div class="dept-name">IT</div>
-      <div class="member">
+      <div class="member" onclick="openPopup('pranav')">
         <div class="photo-frame-sm">
           <img src="images/ocmem/pranav.jpg" alt="Pranav">
         </div>
@@ -447,7 +447,20 @@ function closePopup(id) {
           <span class="m-name">Pranav</span>
         </div>
       </div>
-      <div class="member">
+      <div id="pranav" class="overlay">
+        <div class="popup-card">
+          <span class="close-btn" onclick="closePopup('pranav')">&times;</span>
+          <div class="header">
+            <img class="img" src="images/ocmem/pranav.jpg" alt="pranav">
+            <div class="titles">
+              <h2 class="name">Pranav</h2>
+              <p class="role">Head of IT</p>
+            </div>
+          </div>
+          <p class="desc"></p>
+        </div>
+      </div>
+      <div class="member" onclick="openPopup('shri')">
         <div class="photo-frame-sm">
           <img src="images/ocmem/shri.jpeg" alt="Shri Adhithya">
         </div>
@@ -456,12 +469,25 @@ function closePopup(id) {
           <span class="m-name">Shri Adhithya</span>
         </div>
       </div>
+      <div id="shri" class="overlay">
+        <div class="popup-card">
+          <span class="close-btn" onclick="closePopup('shri')">&times;</span>
+          <div class="header">
+            <img class="img" src="images/ocmem/shri.jpeg" alt="shri">
+            <div class="titles">
+              <h2 class="name">Shri Adhithya</h2>
+              <p class="role">Deputy Head of IT</p>
+            </div>
+          </div>
+          <p class="desc"></p>
+        </div>
+      </div>
     </div>
 
     <!-- Outreach -->
     <div class="dept-card">
       <div class="dept-name">Outreach</div>
-      <div class="member">
+      <div class="member" onclick="openPopup('lucia')">
         <div class="photo-frame-sm">
           <img src="images/ocmem/lucia.jpg" alt="Lucia">
         </div>
@@ -470,13 +496,39 @@ function closePopup(id) {
           <span class="m-name">Lucia</span>
         </div>
       </div>
-      <div class="member">
+      <div id="lucia" class="overlay">
+        <div class="popup-card">
+          <span class="close-btn" onclick="closePopup('lucia')">&times;</span>
+          <div class="header">
+            <img class="img" src="images/ocmem/lucia.jpg" alt="lucia">
+            <div class="titles">
+              <h2 class="name">Lucia</h2>
+              <p class="role">Head of Outreach</p>
+            </div>
+          </div>
+          <p class="desc">Lucia is a driven and creative individual who’s always looking to make an impact. She expresses herself through writing, leadership roles, and collaborative projects, bringing both passion and purpose into everything she does. Actively involved in MUN and outreach initiatives, she is passionate about discussing global issues, representing ideas, and working towards meaningful change in her community. She loves bringing people together for a cause and is always ready to lend a helping hand. With a keen eye for creativity and storytelling, her wide range of interests reflects her unique perspective on the world. Follow her journey on Instagram @lucy._strz ✨</p>
+        </div>
+      </div>
+      <div class="member" onclick="openPopup('dania')">
         <div class="photo-frame-sm">
           <img src="images/ocmem/dania.jpg" alt="Dania">
         </div>
         <div class="member-info">
           <span class="m-role">Deputy</span>
           <span class="m-name">Dania</span>
+        </div>
+      </div>
+      <div id="dania" class="overlay">
+        <div class="popup-card">
+          <span class="close-btn" onclick="closePopup('dania')">&times;</span>
+          <div class="header">
+            <img class="img" src="images/ocmem/dania.jpg" alt="lucia">
+            <div class="titles">
+              <h2 class="name">Dania</h2>
+              <p class="role">Deputy Head of Outreach</p>
+            </div>
+          </div>
+          <p class="desc"></p>
         </div>
       </div>
     </div>
@@ -623,7 +675,16 @@ function closePopup(id) {
   </div>
 </section>
 
-
+<section id="contact">
+  <h2 class="con-title">Need help?</h2>
+  <div class="about">
+    <p>You can contact us at <a class="link-contact">cimun171@gmail.com</a> or reach us on our socials!</p>
+  </div>
+  <div class="socials">
+    <a href="#" class="fa fa-instagram fa-3x"></a>
+    <a href="#" class="fa fa-linkedin fa-3x"></a>
+  </div>
+</section>
 
 <!-- ═══ FOOTER ═══ -->
 <footer>
