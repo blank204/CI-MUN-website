@@ -176,4 +176,5 @@ animation:fadeUp 1s ease-out .6s both;
 @media(max-width:600px){
 .navbar ul{gap: 1rem}
 .hero{min-height: 3vh;}
+.con p{font-size: 1rem;}
 }
