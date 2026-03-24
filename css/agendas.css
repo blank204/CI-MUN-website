@@ -171,3 +171,7 @@ animation:fadeUp 1s ease-out .6s both;
 }
 
 .con:hover .vert-divider { height: 80px; }
+
+@media(max-width:600px){
+.navbar ul{gap: 1rem}
+}

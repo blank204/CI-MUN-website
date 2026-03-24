@@ -19,7 +19,7 @@ overflow-x:hidden;
 
 /* ── NAVBAR ── */
 .navbar {
-position: relative;
+position: static;
 top: 0;
 left: 0;
 padding-bottom: 3rem;
@@ -48,7 +48,7 @@ color: var(--light-gold);
 
 /* ── HERO ── */
 .hero{
-min-height:100vh;
+min-height: 100vh;
 display:flex;
 flex-direction:column;
 align-items:center;
@@ -322,8 +322,10 @@ border-radius:4px;
 padding:2rem 1.5rem;
 width: 100%;
 display: flex; flex-direction: column;
-grid-row: 3;
+order: 1;
 grid-column: 1 / -1;
+
+
 }
 .outreach .dept-name{
 align-self: top;
@@ -341,8 +343,10 @@ text-align:center;
 .outreach .managers {
     display: flex;
     flex-direction: row;
-    gap: 3rem;
+    gap: 2rem;
     justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
 }
 .outreach .member{
 cursor: pointer;
@@ -393,6 +397,7 @@ footer span{color:var(--gold)}
 .exec-card{flex:1 1 140px;max-width:160px;padding:1.5rem 1rem}
 .exec-card .photo-frame{width:80px;height:80px}
 .exec-card .name{font-size:1.05rem}
+.navbar ul{gap: 1rem}
 }
 
 /* infocard */
