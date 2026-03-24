@@ -398,6 +398,7 @@ footer span{color:var(--gold)}
 .exec-card .photo-frame{width:80px;height:80px}
 .exec-card .name{font-size:1.05rem}
 .navbar ul{gap: 1rem}
+.hero{min-height: 3vh;}
 }
 
 /* infocard */
